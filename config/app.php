@@ -53,7 +53,7 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
-    'baseURL' => "https://kdmcgvp.in",
+    'baseURL' => "https://manchar.kdmcgvp.in",
 
     'asset_url' => env('ASSET_URL', null),
 
