@@ -56,13 +56,13 @@
                         <div class="menu-title">All Wards</div>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="{{config('app.baseURL')}}/hajeri-shed/all">
                         <div class="parent-icon"><i class='bx bx-file'></i>
                         </div>
                         <div class="menu-title">All Hajeri Shed</div>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="{{config('app.baseURL')}}/barcode/all">
                         <div class="parent-icon"><i class='bx bx-folder'></i>

@@ -51,18 +51,18 @@
 							</div>
 							<div class="col-md-6">
 								<label for="inputFirstName2" class="form-label">Select Ward</label>
-								<select class="form-control form-select" required onchange="getHajeriShed(this.value)" name="ward_id">
+								<select class="form-control form-select" required onchange="getArea1(this.value)" name="ward_id">
 									<option value="">Select Ward</option>
 									@foreach($wards as $ward)
 									<option value="{{$ward->id}}">{{$ward->name}}</option>
 									@endforeach
 								</select>
 							</div>
-							<div class="col-md-6">
+<!-- 							<div class="col-md-6">
 								<label class="form-label">Select Hajeri Shed</label>
 								<select class="multiple-select" class="form-control" id="shed_id" name="shed_id[]" data-placeholder="Choose anything" multiple="multiple" onchange="getArea1()" required>			
 								</select>
-							</div>
+							</div> -->
 							<div class="col-md-6">
 								<label for="inputFirstName2" class="form-label">Select Area</label>
 								<select class="multiple-select" required name="area_id[]" id="area_id" data-placeholder="Choose anything" multiple="multiple">
@@ -97,9 +97,9 @@
 <!--end page wrapper -->
 
 <script type="text/javascript">
-	function getArea1()
+	function getArea1(ward_id)
 	{
-		ward_id=$("#shed_id").val();
+		// ward_id=$("#shed_id").val();
 		data=[];
 		data.push(ward_id);
 		if(data.length!=0)
@@ -107,7 +107,7 @@
 			$.ajax({
 				url: "{{config('app.baseURL')}}/user/get-area",
 				type:"GET",
-				data:{shed_id:data[0]},
+				data:{ward_id:data[0]},
 				success:function(data)
 				{
 					$("#area_id").html(data);

@@ -83,7 +83,7 @@ class CustomerController extends Controller
         $data->mobile_number=$request->mobile_number;
         $data->address=$request->address;
         $data->ward_id=$request->ward_id;
-        $data->shed_id=implode(',',$request->shed_id);
+        // $data->shed_id=implode(',',$request->shed_id);
         $data->area_id=implode(',',$request->area_id);
         $data->password=Hash::make($request->password);
         $data->save();
@@ -104,20 +104,20 @@ class CustomerController extends Controller
     {
         $data=Customer::find($id);
         $wards=Ward::where('is_active',1)->get();
-        $sheds=HajeriShed::where('ward_id',$data->ward_id)->get();
-        foreach ($sheds as $key => $value) {
-            $value['is_present']=0;
-            if($data->shed_id!=null)
-            {
-                $hajeri=explode(',',$data->shed_id);
-                foreach ($hajeri as $key1 => $value1) {
-                    if($value1==$value->id)
-                    {
-                        $value['is_present']=1;
-                    }            
-                }                
-            }
-        }
+        // $sheds=HajeriShed::where('ward_id',$data->ward_id)->get();
+        // foreach ($sheds as $key => $value) {
+        //     $value['is_present']=0;
+        //     if($data->shed_id!=null)
+        //     {
+        //         $hajeri=explode(',',$data->shed_id);
+        //         foreach ($hajeri as $key1 => $value1) {
+        //             if($value1==$value->id)
+        //             {
+        //                 $value['is_present']=1;
+        //             }            
+        //         }                
+        //     }
+        // }
 
         $areas=Bar::where('ward_id',$data->ward_id)->get();
         foreach ($areas as $key => $area) {
@@ -133,7 +133,7 @@ class CustomerController extends Controller
                 }                
             }
         }
-        return view('customer.edit')->with(['data'=>$data,'wards'=>$wards,'areas'=>$areas,'sheds'=>$sheds]);
+        return view('customer.edit')->with(['data'=>$data,'wards'=>$wards,'areas'=>$areas]);
     }
     public function deleteCustomerData($id)
     {
@@ -175,7 +175,7 @@ class CustomerController extends Controller
         $data->address=$request->address;
         $data->is_active=$request->status;
         $data->ward_id=$request->ward_id;
-        $data->shed_id=implode(',', $request->shed_id);
+        // $data->shed_id=implode(',', $request->shed_id);
         $data->area_id=implode(',', $request->area_id);
         $data->save();
         $notification = array(
@@ -189,7 +189,7 @@ class CustomerController extends Controller
     {
         $html="";
         $html.='<option value="">Select Area</option>';
-        $datas=Bar::whereIn('shed_id',$request->shed_id)->get();
+        $datas=Bar::where('ward_id',$request->ward_id)->get();
         if($datas)
         {
             foreach ($datas as $key => $data) {

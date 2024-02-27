@@ -24,7 +24,7 @@
 							
 							<div class="col-md-12">
 								<label for="inputFirstName2" class="form-label">Select Ward <span class="text-danger" style="font-weight: bold;">*</span></label>
-								<select class="form-control form-select" name="ward_id" onchange="getHajeriShed(this.value)" required>
+								<select class="form-control form-select" name="ward_id" required>
 									<option value="">Select</option>
 									@foreach($data as $ward)
 									<option value="{{$ward->id}}">{{$ward->name}}</option>
@@ -32,14 +32,14 @@
 								</select>
 							</div>
 							
-							<div class="col-md-12">
+							<!-- <div class="col-md-12">
 								<label for="inputFirstName2" class="form-label">Select Hajeri Shed <span class="text-danger" style="font-weight: bold;">*</span></label>
 								<select class="form-control form-select" name="shed_id" id="shed_id" required>
 									<option value="">Select</option>
 									
 								</select>
 							</div>
-							
+							 -->
 
 							<div class="col-md-12">
 								<label for="inputFirstName2" class="form-label">Address <span class="text-danger" style="font-weight: bold;">*</span></label>

@@ -34,7 +34,7 @@
         <link rel="stylesheet" href="{{config('app.baseURL')}}/assets/plugins/notifications/css/lobibox.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <title>Barcode - Admin Dashboard</title>
+        <title>Manchar Nagarpanchayat - Admin Dashboard</title>
     </head>
 
     <body>
@@ -53,7 +53,7 @@
             <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
             <!--End Back To Top Button-->
             <footer class="page-footer">
-                <p class="mb-0">Copyright © 2021. All right reserved.</p>
+                <p class="mb-0">Copyright © {{date('Y')}}. All right reserved.</p>
                 <input type="hidden" name="push_token" id="push">
             </footer>
         </div>

@@ -72,18 +72,18 @@ class BookingController extends Controller
         }
 
 
-        if($request->shed!=null)
-        {
-            $shed_id=HajeriShed::where('hajeri_shed','like','%'.$request->shed.'%')->where('is_active',1)->pluck('id');
-            if($shed_id)
-            {
-                $area=Bar::whereIn('shed_id',$shed_id)->pluck('id');
-                if($area)
-                {
-                    $data=$data->whereIn('barcode_id',$area);   
-                }   
-            }
-        }
+        // if($request->shed!=null)
+        // {
+        //     $shed_id=HajeriShed::where('hajeri_shed','like','%'.$request->shed.'%')->where('is_active',1)->pluck('id');
+        //     if($shed_id)
+        //     {
+        //         $area=Bar::whereIn('shed_id',$shed_id)->pluck('id');
+        //         if($area)
+        //         {
+        //             $data=$data->whereIn('barcode_id',$area);   
+        //         }   
+        //     }
+        // }
 
         if($request->ward!=null)
         {
@@ -363,14 +363,13 @@ class BookingController extends Controller
     {
         $html='<table border="1">
         <tr>
-        <th colspan="29"><h3>KDMC Report Data</h3></th>
+        <th colspan="28"><h3>MANCHAR NAGARPANCHAYAT Report Data</h3></th>
         </tr>
         <tr>
         <th>Date</th>
         <th>Time</th>
         <th>QRCode ID</th>
         <th>Ward Name</th>
-        <th>Hajeri Shed</th>
         <th>Area Name</th>
         <th>Incharge Person</th>
         <th>Mukadam Name</th>
@@ -428,19 +427,6 @@ class BookingController extends Controller
         }
 
 
-        if($request->shed!=null)
-        {
-            $shed_id=HajeriShed::where('hajeri_shed','like','%'.$request->shed.'%')->where('is_active',1)->pluck('id');
-            if($shed_id)
-            {
-                $area=Bar::whereIn('shed_id',$shed_id)->pluck('id');
-                if($area)
-                {
-                    $rto=$rto->whereIn('barcode_id',$area);   
-                }   
-            }
-        }
-
         if($request->ward!=null)
         {
             $ward_id=Ward::where('name','like','%'.$request->ward.'%')->where('is_active',1)->pluck('id');
@@ -474,8 +460,7 @@ class BookingController extends Controller
                     $html.='<td>-</td>';
                 }
                 
-                $html.='<td>'.$rtos->barcode->hajeri->hajeri_shed.'</td>
-                <td>'.$rtos->barcode->address.'</td>';
+                $html.='<td>'.$rtos->barcode->address.'</td>';
             }
             else
             {

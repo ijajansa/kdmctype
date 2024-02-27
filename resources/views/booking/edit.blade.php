@@ -32,10 +32,10 @@
 							</div>
 							@endif
 
-							<div class="col-md-2">
+<!-- 							<div class="col-md-2">
 								<label for="inputFirstName2" class="form-label">Hajeri Shed</label>
 								<input type="text" name="email" class="form-control" readonly value="{{$data->barcode->hajeri->hajeri_shed??''}}" id="inputFirstName2" required>
-							</div>
+							</div> -->
 
 							<div class="col-md-2">
 								<label for="inputState" class="form-label">Area Name</label>

@@ -20,7 +20,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet">
         <link href="{{config('app.baseURL')}}/assets/css/app.css" rel="stylesheet">
         <link href="{{config('app.baseURL')}}/assets/css/icons.css" rel="stylesheet">
-        <title>Barcode - Login Page</title>
+        <title>Manchar Nagarpanchayat - Login Page</title>
     </head>
 
     <body class="bg-login">

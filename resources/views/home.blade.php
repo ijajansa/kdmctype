@@ -94,7 +94,7 @@
                     </div>
                   </div> 
                 </div><!--end row-->
-                <div class="" style="display: flex;width: 100%;margin-top: 50px;">
+                <!-- <div class="" style="display: flex;width: 100%;margin-top: 50px;">
                   <div style="width: 33.33%">
                     <img src="{{config('app.baseURL')}}/assets/images/img3.jpeg" style="width: 250px;height: 200px;">
                   </div>
@@ -104,7 +104,7 @@
                   <div style="width: 33.33%">
                     <img src="{{config('app.baseURL')}}/assets/images/img2.jpeg" style="width: 250px;height: 200px;">
                   </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <!--end page wrapper -->
