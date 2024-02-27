@@ -35,7 +35,7 @@
                                 <div class="card-body">
                                     <div class="p-4 rounded">
                                         <div class="mb-4 text-center">
-                                            <img src="{{config('app.baseURL')}}/assets/images/kdmc-logo.png" style="width: 120px;" alt="" />
+                                            {{-- <img src="{{config('app.baseURL')}}/assets/images/kdmc-logo.png" style="width: 120px;" alt="" /> --}}
                                         </div>
                                         <div class="text-center">
                                             <h3 class="">Sign in</h3>
